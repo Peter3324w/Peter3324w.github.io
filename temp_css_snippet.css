@@ -1,0 +1,60 @@
+/* ============================================
+   Custom Layout Adjustments
+   ============================================ */
+
+/* Increase page borders (container padding) */
+.main-content>.container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* 8-Column Flex Grid for Quick Access */
+.quick-access-row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Force one row as requested */
+    margin-left: -5px;
+    /* Tighter gutters */
+    margin-right: -5px;
+    overflow-x: auto;
+    /* Safety scroll if too narrow */
+}
+
+.quick-access-col {
+    flex: 0 0 12.5%;
+    /* 1/8th width */
+    max-width: 12.5%;
+    padding: 0 5px;
+}
+
+/* Adjust card internals for smaller size */
+.quick-access-col .quick-card {
+    min-height: 110px;
+    padding: 15px 5px;
+}
+
+.quick-access-col .quick-card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.quick-access-col .quick-card-label {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .main-content>.container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* On mobile, maybe allow scrolling or wrapping? 
+       User said "All of them should fit in one row", assuming desktop/tablet context usually.
+       But forcing 8 on mobile portrait is tiny. 
+       I'll keep `overflow-x: auto` on the row just in case.
+    */
+}

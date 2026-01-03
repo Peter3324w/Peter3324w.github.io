@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudHub - Student Portal Login">
+    <title>StudHub | Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="login-body">
+    <div class="login-wrapper">
+        <div class="login-container">
+            <!-- Left Panel - Image Side -->
+            <div class="login-image-panel">
+                <div class="image-overlay"></div>
+                <div class="college-branding">
+                    <div class="college-logo">
+                        <img src="images/ehclogo.png" alt="College Logo"
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="college-info">
+                        <h2 class="college-name">Evelyn Hone College</h2>
+                        <p class="college-tagline">Students Portal</p>
+                    </div>S
+                </div>
+            </div>
+
+            <!-- Right Panel - Login Form -->
+            <div class="login-form-panel">
+                <div class="login-form-content">
+                    <!-- Logo Header -->
+                    <div class="logo-header">
+                        <div class="logo-icon">
+                            <!-- Replace this image src with your custom logo -->
+                            <img src="images/sm logo.png" alt="StudMaster Logo" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-stud">Stud</span><span class="logo-master">Master</span>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="login-form" novalidate>
+                        <div class="form-group">
+                            <label for="studentNumber" class="control-label">STUDENT NO/EMAIL.</label>
+                            <input type="text" class="form-control" id="studentNumber" name="studentNumber"
+                                placeholder="Enter Student Number" required>
+                            <span class="help-block error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="control-label">PASSWORD</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Enter Password" required>
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="help-block error-message"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-login" id="loginBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="btn-loader hidden">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+
+                        <div class="form-footer">
+                            <div class="remember-me">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Remember Me</span>
+                                </label>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="#">Forgot Password</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Password visibility toggle
+            $('#togglePassword').on('click', function () {
+                var passwordInput = $('#password');
+                var icon = $(this).find('i');
+
+                if (passwordInput.attr('type') === 'password') {
+                    passwordInput.attr('type', 'text');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordInput.attr('type', 'password');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            });
+
+            // Clear error on input
+            $('input').on('input', function () {
+                $(this).closest('.form-group').removeClass('has-error');
+                $(this).closest('.form-group').find('.error-message').text('');
+            });
+
+            // Form validation and submission
+            $('#loginForm').on('submit', function (e) {
+                e.preventDefault();
+
+                var isValid = true;
+                var studentNumber = $('#studentNumber').val().trim();
+                var password = $('#password').val().trim();
+
+                // Clear previous errors
+                $('.form-group').removeClass('has-error');
+                $('.error-message').text('');
+
+                // Validate Student Number
+                if (!studentNumber) {
+                    $('#studentNumber').closest('.form-group').addClass('has-error');
+                    $('#studentNumber').closest('.form-group').find('.error-message').text('Student Number is required');
+                    isValid = false;
+                }
+
+                // Validate Password
+                if (!password) {
+                    $('#password').closest('.form-group').addClass('has-error');
+                    $('#password').closest('.form-group').find('.error-message').text('Password is required');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Show loading spinner
+                    $('#loginBtn .btn-text').addClass('hidden');
+                    $('#loginBtn .btn-loader').removeClass('hidden');
+                    $('#loginBtn').prop('disabled', true);
+
+                    // Simulate login process
+                    setTimeout(function () {
+                        // Redirect to dashboard
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

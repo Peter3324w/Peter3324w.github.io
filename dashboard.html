@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudHub - Student Dashboard">
+    <title>StudHub | Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="dashboard-body">
+    <!-- ============================================
+         TOP HEADER BAR
+         ============================================ -->
+    <header class="top-header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="header-logo">
+                    <a href="dashboard.html">
+                        <div class="logo-icon">
+                            <img src="images/logo-icon.png" alt="StudMaster Logo" class="logo-img"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-s\'>S</span>';">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-stud">Stud</span><span class="logo-master">Master</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Header Right Actions -->
+                <div class="header-actions">
+                    <a href="#" class="header-action-item" title="Notifications">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                    <span class="header-action-item language-label">PE</span>
+                    <a href="#" class="header-action-item user-profile" title="Profile">
+                        <i class="fa fa-user-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         MAIN NAVIGATION (Orange Bar)
+         ============================================ -->
+    <nav class="navbar navbar-orange">
+        <div class="container-fluid">
+            <!-- Brand and toggle for mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="nav navbar-nav">
+                    <!-- Registration Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            Registration <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="registration.html">Termly/Semester</a></li>
+                            <li><a href="exam_registration.html">Exam Registration</a></li>
+                            <li><a href="#">Credit Agreement</a></li>
+                            <li><a href="#">Academic Year Registration</a></li>
+                            <li><a href="#">Clearance Certificate</a></li>
+                            <li><a href="#">Change program Request</a></li>
+                            <li><a href="#">Transfer Funds Request</a></li>
+                            <li><a href="#">Withdraw Program</a></li>
+                            <li><a href="student_file.html">Student File</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Academics Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            Academics <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Class Work</a></li>
+                            <li><a href="#">Exam Results</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- More Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            More <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Student Rules</a></li>
+                            <li><a href="#">Wifi Config</a></li>
+                            <li><a href="#">Graduation Registration</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Academic Calendar</a></li>
+                            <li><a href="#">FeedBack</a></li>
+                            <li><a href="#">Industrial Attachment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Logout (Right aligned) -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html" class="logout-link" title="Logout">
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main class="main-content">
+        <div class="container-fluid">
+
+            <!-- Section Title -->
+            <div class="section-header">
+                <span class="section-indicator"></span>
+                <h4 class="section-title">QUICK ACCESS | <span class="text-student">STUDENT</span></h4>
+            </div>
+
+            <!-- ============================================
+                 ALERT BANNERS
+                 ============================================ -->
+            <div class="alert-banner alert-registration">
+                <p>
+                    <strong>Student Registration</strong> for each Semester/Term <strong class="text-must">is a
+                        must</strong> for all Students (GRZ, self, CDF, owing, paid up).
+                    <a href="#" class="btn btn-outline-dark btn-sm">Click Here</a>
+                    to Print your registration slip, or to start your registration. Comply and avoid being
+                    inconvenienced. Register Today
+                </p>
+            </div>
+
+            <div class="alert-banner alert-wifi">
+                <p>
+                    For Instructions on wifi configurations Click
+                    <a href="#" class="btn btn-outline-dark btn-sm">HERE</a>
+                    AND FOLLOW THE INSTRUCTION CAREFULLY. No need to go to the IT Office
+                </p>
+            </div>
+
+            <!-- ============================================
+                 QUICK ACCESS GRID
+                 <!-- Quick Access Grid with Images (Single Row, 8 items) -->
+            <div class="quick-access-grid">
+                <div class="quick-access-row">
+                    <!-- 1. Wifi Config (Using query.png) -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/query.png" alt="Wiki Config" class="quick-card-icon">
+                            <span class="quick-card-label">WIFI CONFIG</span>
+                        </a>
+                    </div>
+                    <!-- 2. IT Orientation (Using query.png) -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/query.png" alt="IT Orientation" class="quick-card-icon">
+                            <span class="quick-card-label">IT ORIENTATION</span>
+                        </a>
+                    </div>
+                    <!-- 3. Profile -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/profile.png" alt="Profile" class="quick-card-icon">
+                            <span class="quick-card-label">PROFILE</span>
+                        </a>
+                    </div>
+                    <!-- 4. Registration -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/register.png" alt="Registration" class="quick-card-icon">
+                            <span class="quick-card-label">REGISTRATION</span>
+                        </a>
+                    </div>
+                    <!-- 5. Class -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/classes.png" alt="Class" class="quick-card-icon">
+                            <span class="quick-card-label">CLASS</span>
+                        </a>
+                    </div>
+                    <!-- 6. Library -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/lib.png" alt="Library" class="quick-card-icon">
+                            <span class="quick-card-label">LIBRARY</span>
+                        </a>
+                    </div>
+                    <!-- 7. Clearance -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/clear.png" alt="Clearance" class="quick-card-icon">
+                            <span class="quick-card-label">CLEARANCE</span>
+                        </a>
+                    </div>
+                    <!-- 8. Query -->
+                    <div class="quick-access-col">
+                        <a href="#" class="quick-card">
+                            <img src="images/assets/query.png" alt="Query" class="quick-card-icon">
+                            <span class="quick-card-label">QUERY</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 GUIDE TO GET STARTED (FAQ Accordion)
+                 ============================================ -->
+            <div class="guide-section">
+                <div class="section-header">
+                    <span class="section-indicator"></span>
+                    <h4 class="section-title">GUIDE TO GET STARTED | <span class="text-student">STUDENT</span></h4>
+                </div>
+
+                <div class="panel-group faq-accordion" id="faq-accordion" role="tablist" aria-multiselectable="true">
+                    <!-- FAQ Item 1 -->
+                    <div class="panel panel-faq">
+                        <div class="panel-heading" role="tab" id="faq-heading-1">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                    href="#faq-collapse-1" aria-expanded="false" aria-controls="faq-collapse-1">
+                                    <i class="fa fa-question-circle"></i>
+                                    How do I Pay (School Fee/Exam Fee/Other Fees)?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="faq-collapse-1" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="faq-heading-1">
+                            <div class="panel-body">
+                                You can pay your fees through the student portal by navigating to the Finance section,
+                                or visit the Accounts office for manual payments.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="panel panel-faq">
+                        <div class="panel-heading" role="tab" id="faq-heading-2">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                    href="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+                                    <i class="fa fa-question-circle"></i>
+                                    How do I register for Exam?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="faq-collapse-2" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="faq-heading-2">
+                            <div class="panel-body">
+                                Navigate to Registration > Exam Registration from the main menu. Complete the required
+                                fields and submit your exam registration before the deadline.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="panel panel-faq">
+                        <div class="panel-heading" role="tab" id="faq-heading-3">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                    href="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
+                                    <i class="fa fa-question-circle"></i>
+                                    How do I register for Termly or Semester Registration?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="faq-collapse-3" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="faq-heading-3">
+                            <div class="panel-body">
+                                Go to Registration > Term Registration from the main menu. Complete all required
+                                information and submit. Your registration slip will be available for download after
+                                successful registration.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="panel panel-faq">
+                        <div class="panel-heading" role="tab" id="faq-heading-4">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                    href="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
+                                    <i class="fa fa-question-circle"></i>
+                                    How do I fill in an Agreement form.?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="faq-collapse-4" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="faq-heading-4">
+                            <div class="panel-body">
+                                Agreement forms can be downloaded from the portal under the Forms section. Fill in the
+                                required details and submit to the appropriate office.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="panel panel-faq">
+                        <div class="panel-heading" role="tab" id="faq-heading-5">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                    href="#faq-collapse-5" aria-expanded="false" aria-controls="faq-collapse-5">
+                                    <i class="fa fa-question-circle"></i>
+                                    How do I Register for First Year
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="faq-collapse-5" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="faq-heading-5">
+                            <div class="panel-body">
+                                First year registration is done during orientation week. Visit the Registration office
+                                with your admission letter and all required documents.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer">
+        <div class="container-fluid">
+            <p>Found&copy;Copyright - StudHub University. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Close mobile menu when clicking a link
+            $('.navbar-nav li a').on('click', function () {
+                if ($('.navbar-collapse').hasClass('in')) {
+                    $('.navbar-collapse').collapse('hide');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
