@@ -29,7 +29,7 @@
                     <div class="college-info">
                         <h2 class="college-name">Evelyn Hone College</h2>
                         <p class="college-tagline">Students Portal</p>
-                    </div>S
+                    </div>
                 </div>
             </div>
 
@@ -151,16 +151,24 @@
                 }
 
                 if (isValid) {
-                    // Show loading spinner
-                    $('#loginBtn .btn-text').addClass('hidden');
-                    $('#loginBtn .btn-loader').removeClass('hidden');
-                    $('#loginBtn').prop('disabled', true);
+                    // Check specific credentials
+                    if (studentNumber === 'peterphiri203@gmail.com' && password === 'John3v16') {
+                        // Show loading spinner
+                        $('#loginBtn .btn-text').addClass('hidden');
+                        $('#loginBtn .btn-loader').removeClass('hidden');
+                        $('#loginBtn').prop('disabled', true);
 
-                    // Simulate login process
-                    setTimeout(function () {
-                        // Redirect to dashboard
-                        window.location.href = 'dashboard.html';
-                    }, 1500);
+                        // Simulate login process
+                        setTimeout(function () {
+                            // Redirect to dashboard
+                            window.location.href = 'dashboard.html';
+                        }, 1500);
+                    } else {
+                        // Show error for invalid credentials
+                        $('.form-group').addClass('has-error');
+                        $('.password-input-wrapper').next('.error-message').text('Invalid email or password');
+                        $('#studentNumber').closest('.form-group').find('.error-message').text('Invalid email or password');
+                    }
                 }
             });
         });
